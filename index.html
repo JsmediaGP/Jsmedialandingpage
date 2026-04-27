@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Js'Media Photography — Ibadan, Nigeria</title>
+  <meta name="description" content="Award-winning portrait, wedding, and commercial photography based in Ibadan, Nigeria." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Js'<b>Media</b></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+  </ul>
+  <a href="#contact" class="nav-book">Book a Session</a>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO CAROUSEL
+════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides">
+
+    <!-- Slide 1 -->
+    <div class="slide active" data-index="0">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1800&q=90')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-inner">
+          <div class="slide-tag">
+            <div class="slide-tag-line"></div>
+            <span>Wedding Photography</span>
+          </div>
+          <h1 class="slide-title">Every vow,<br><em>perfectly captured</em></h1>
+          <p class="slide-desc">Full-day wedding coverage that honours the emotion, beauty, and magic of your most sacred day.</p>
+          <div class="slide-actions">
+            <a href="#contact" class="btn-gold">
+              Check Availability
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#portfolio" class="btn-outline-w">View Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" data-index="1">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1800&q=90')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-inner">
+          <div class="slide-tag">
+            <div class="slide-tag-line"></div>
+            <span>Portrait Photography</span>
+          </div>
+          <h1 class="slide-title">Your face,<br><em>your story</em></h1>
+          <p class="slide-desc">Personal branding, headshots, and editorial portraits that communicate confidence and authentic character.</p>
+          <div class="slide-actions">
+            <a href="#contact" class="btn-gold">
+              Book a Session
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#portfolio" class="btn-outline-w">See Examples</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" data-index="2">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1800&q=90')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-inner">
+          <div class="slide-tag">
+            <div class="slide-tag-line"></div>
+            <span>Commercial Photography</span>
+          </div>
+          <h1 class="slide-title">Elevate your<br><em>brand visuals</em></h1>
+          <p class="slide-desc">Product campaigns, brand photography, and corporate content that drives attention and real business results.</p>
+          <div class="slide-actions">
+            <a href="#contact" class="btn-gold">
+              Get a Quote
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#portfolio" class="btn-outline-w">View Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hero-slides -->
+
+  <!-- Dots + Arrows -->
+  <div class="hero-controls">
+    <div class="hero-dots" id="heroDots">
+      <div class="dot active" onclick="goSlide(0)"></div>
+      <div class="dot" onclick="goSlide(1)"></div>
+      <div class="dot" onclick="goSlide(2)"></div>
+    </div>
+    <div class="hero-arrows">
+      <button class="hero-arrow" onclick="prevSlide()" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero-arrow" onclick="nextSlide()" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Counter -->
+  <div class="hero-counter" id="heroCounter"><span>01</span> / 03</div>
+
+  <!-- Floating stats -->
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-n">500<b>+</b></div>
+      <div class="stat-l">Sessions Shot</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">8<b>+</b></div>
+      <div class="stat-l">Yrs Experience</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">5<b>★</b></div>
+      <div class="stat-l">Avg Rating</div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="hero-scroll-hint">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     MARQUEE
+════════════════════════════════════════ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="mq-item"><div class="mq-gem"></div>Portrait Photography</div>
+    <div class="mq-item"><div class="mq-gem"></div>Wedding Coverage</div>
+    <div class="mq-item"><div class="mq-gem"></div>Commercial &amp; Brand</div>
+    <div class="mq-item"><div class="mq-gem"></div>Event Photography</div>
+    <div class="mq-item"><div class="mq-gem"></div>Personal Branding</div>
+    <div class="mq-item"><div class="mq-gem"></div>Product Shoots</div>
+    <div class="mq-item"><div class="mq-gem"></div>Ibadan · Lagos · Abuja</div>
+    <div class="mq-item"><div class="mq-gem"></div>Portrait Photography</div>
+    <div class="mq-item"><div class="mq-gem"></div>Wedding Coverage</div>
+    <div class="mq-item"><div class="mq-gem"></div>Commercial &amp; Brand</div>
+    <div class="mq-item"><div class="mq-gem"></div>Event Photography</div>
+    <div class="mq-item"><div class="mq-gem"></div>Personal Branding</div>
+    <div class="mq-item"><div class="mq-gem"></div>Product Shoots</div>
+    <div class="mq-item"><div class="mq-gem"></div>Ibadan · Lagos · Abuja</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
+<section class="section bg-dark" id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap rv">
+      <div class="about-img-a">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=85" alt="Portrait session" loading="lazy" />
+      </div>
+      <div class="about-img-b">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=85" alt="Wedding moment" loading="lazy" />
+      </div>
+      <div class="about-medal">
+        <strong>5★</strong>
+        <small>Top-Rated<br>Studio</small>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow rv">About Js'Media</span>
+      <h2 class="h2 rv d1">More than photos —<br><em>permanent memories</em></h2>
+      <p class="rv d2" style="margin-top:1.5rem;">Hi, I'm <strong>Joshua</strong> — a multidisciplinary photographer based in Ibadan, Nigeria. With over 8 years behind the lens, I've helped hundreds of individuals, couples, and brands communicate through intentional, cinematic imagery.</p>
+      <p class="rv d2">My approach blends technical precision with creative storytelling. Whether it's the quiet emotion of a wedding ceremony or the sharp energy of a product campaign, every frame is crafted with the same care and intentionality.</p>
+      <a href="#portfolio" class="about-link rv d3">
+        See my work
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════ -->
+<section class="section" id="services">
+  <div class="services-head">
+    <div class="services-head-l">
+      <span class="eyebrow rv">What I Offer</span>
+      <h2 class="h2 rv d1">Services built<br>around <em>your vision</em></h2>
+      <p class="rv d2">Three core disciplines, each delivered with professional quality and a seamless client experience.</p>
+    </div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card rv">
+      <div class="svc-num">01</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      </div>
+      <h3 class="svc-name">Portrait Photography</h3>
+      <p class="svc-desc">Personal branding, headshots, and individual portraits that reveal who you truly are — with confidence and depth.</p>
+      <ul class="svc-list">
+        <li>Personal branding sessions</li>
+        <li>Professional headshots</li>
+        <li>Family &amp; lifestyle portraits</li>
+        <li>Editorial portraits</li>
+      </ul>
+      <a href="#contact" class="svc-cta">Enquire now →</a>
+    </div>
+    <div class="svc-card rv d1">
+      <div class="svc-num">02</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <h3 class="svc-name">Weddings &amp; Events</h3>
+      <p class="svc-desc">Full-day wedding coverage and milestone events — captured with warmth, discretion, and lasting artistry.</p>
+      <ul class="svc-list">
+        <li>Full wedding day coverage</li>
+        <li>Engagement &amp; pre-wedding</li>
+        <li>Traditional ceremonies</li>
+        <li>Private &amp; corporate events</li>
+      </ul>
+      <a href="#contact" class="svc-cta">Check availability →</a>
+    </div>
+    <div class="svc-card rv d2">
+      <div class="svc-num">03</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3 class="svc-name">Commercial &amp; Brand</h3>
+      <p class="svc-desc">Product photography and brand campaigns that elevate your visual identity and drive real business results.</p>
+      <ul class="svc-list">
+        <li>Product photography</li>
+        <li>Brand campaign shoots</li>
+        <li>Corporate &amp; team photos</li>
+        <li>Social media content</li>
+      </ul>
+      <a href="#contact" class="svc-cta">Get a quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     PORTFOLIO CAROUSEL
+════════════════════════════════════════ -->
+<section class="section bg-dark" id="portfolio">
+  <div class="port-head rv">
+    <div>
+      <span class="eyebrow">Selected Work</span>
+      <h2 class="h2" style="margin-top:.6rem;">Recent <em>portfolio</em></h2>
+    </div>
+    <div class="port-filters">
+      <button class="pf-btn active" data-filter="all">All</button>
+      <button class="pf-btn" data-filter="portrait">Portrait</button>
+      <button class="pf-btn" data-filter="wedding">Wedding</button>
+      <button class="pf-btn" data-filter="commercial">Commercial</button>
+    </div>
+  </div>
+
+  <div class="port-carousel">
+    <div class="port-track" id="portTrack">
+      <div class="port-item" data-cat="wedding">
+        <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=85')"></div>
+        <div class="port-overlay"><div class="port-cat">Wedding</div><div class="port-title">Adewale &amp; Temi</div></div>
+      </div>
+      <div class="port-item" data-cat="portrait">
+        <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=85')"></div>
+        <div class="port-overlay"><div class="port-cat">Portrait</div><div class="port-title">Golden Hour Series</div></div>
+      </div>
+      <div class="port-item" data-cat="commercial">
+        <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=85')"></div>
+        <div class="port-overlay"><div class="port-cat">Commercial</div><div class="port-title">Brand Campaign 2024</div></div>
+      </div>
+      <div class="port-item" data-cat="portrait">
+        <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=700&q=85')"></div>
+        <div class="port-overlay"><div class="port-cat">Portrait</div><div class="port-title">Editorial Mood</div></div>
+      </div>
+      <div class="port-item" data-cat="wedding">
+        <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=700&q=85')"></div>
+        <div class="port-overlay"><div class="port-cat">Wedding</div><div class="port-title">Chukwu &amp; Ada</div></div>
+      </div>
+      <div class="port-item" data-cat="commercial">
+        <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=700&q=85')"></div>
+        <div class="port-overlay"><div class="port-cat">Commercial</div><div class="port-title">Product Series</div></div>
+      </div>
+    </div>
+    <button class="port-prev" id="portPrev" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="port-next" id="portNext" aria-label="Next">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+  <div class="port-cta rv">
+    <a href="#contact" class="btn-gold">
+      Book a Session
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     PROCESS
+════════════════════════════════════════ -->
+<section class="section" id="process">
+  <div class="process-head">
+    <span class="eyebrow rv">How It Works</span>
+    <h2 class="h2 rv d1">A seamless experience,<br><em>start to finish</em></h2>
+    <p class="rv d2">Every step is designed to be clear, comfortable, and enjoyable — from first message to final gallery.</p>
+  </div>
+  <div class="process-grid">
+    <div class="proc-step rv">
+      <div class="proc-circle">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="proc-lbl">Step 01</div>
+      <h4 class="proc-name">Discovery Call</h4>
+      <p class="proc-desc">We talk through your vision, goals, style, and timeline — zero commitment required.</p>
+    </div>
+    <div class="proc-step rv d1">
+      <div class="proc-circle">
+        <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      </div>
+      <div class="proc-lbl">Step 02</div>
+      <h4 class="proc-name">Creative Planning</h4>
+      <p class="proc-desc">Mood boards, location scouting, and outfit guidance — every detail mapped perfectly.</p>
+    </div>
+    <div class="proc-step rv d2">
+      <div class="proc-circle">
+        <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      </div>
+      <div class="proc-lbl">Step 03</div>
+      <h4 class="proc-name">The Shoot</h4>
+      <p class="proc-desc">Relaxed, professional, and fun. Authentic moments happen naturally on shoot day.</p>
+    </div>
+    <div class="proc-step rv d3">
+      <div class="proc-circle">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div class="proc-lbl">Step 04</div>
+      <h4 class="proc-name">Gallery Delivery</h4>
+      <p class="proc-desc">Fully retouched images in a private gallery within 7–10 days. Print-ready files included.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section class="section bg-darker" id="testimonials">
+  <div class="testi-head rv">
+    <div>
+      <span class="eyebrow">Client Reviews</span>
+      <h2 class="h2" style="margin-top:.6rem;">Words from those who<br><em>trusted the lens</em></h2>
+    </div>
+    <div class="testi-nav">
+      <button class="t-arrow" id="testiPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="t-arrow" id="testiNext" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="testi-track-wrap">
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-card rv">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testi-q">"Joshua captured our wedding day with such grace. Every photo tells a story — raw emotion, beautiful light, and timing that felt like magic. We couldn't be happier."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Emeka" loading="lazy">
+          <div><div class="testi-name">Emeka &amp; Chisom Obi</div><div class="testi-role">Wedding Clients · Lagos</div></div>
+        </div>
+      </div>
+      <div class="testi-card rv d1">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testi-q">"Our brand needed imagery that could compete internationally. Js'Media delivered images that stop the scroll and actually drive conversions. Absolutely world-class."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt="Adaeze" loading="lazy">
+          <div><div class="testi-name">Adaeze Nwosu</div><div class="testi-role">Brand Director · Abuja</div></div>
+        </div>
+      </div>
+      <div class="testi-card rv d2">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testi-q">"I've worked with many photographers for my personal brand. Joshua's eye for light and his ability to make you feel at ease is truly something special and unique."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=100&q=80" alt="Tunde" loading="lazy">
+          <div><div class="testi-name">Tunde Adeleke</div><div class="testi-role">Entrepreneur · Ibadan</div></div>
+        </div>
+      </div>
+      <div class="testi-card rv d1">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testi-q">"The engagement session was everything we hoped for. Joshua understood our vibe immediately and the photos exceeded every expectation. Highly recommend."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="Kemi" loading="lazy">
+          <div><div class="testi-name">Kemi &amp; Dapo Afolabi</div><div class="testi-role">Engagement Session · Ibadan</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CTA / CONTACT
+════════════════════════════════════════ -->
+<section class="cta-wrap" id="contact">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <span class="eyebrow rv">Ready to Begin?</span>
+    <h2 class="h2 rv d1">Let's create something<br><em>extraordinary</em> together</h2>
+    <p class="rv d2">Sessions book up fast. Leave your email and I'll personally reply within 24 hours to discuss your project, pricing, and availability.</p>
+    <div class="cta-form rv d3" id="ctaForm">
+      <input class="cta-email" type="email" id="ctaEmail" placeholder="Your email address" />
+      <button class="cta-go" onclick="ctaSubmit()">Get in Touch</button>
+    </div>
+    <p class="cta-note rv d3">No spam. Just a friendly, personal reply.</p>
+    <div class="cta-trust rv d4">
+      <div class="ct-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Fast response
+      </div>
+      <div class="ct-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        No commitment required
+      </div>
+      <div class="ct-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Custom packages available
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="foot-main">
+    <div>
+      <div class="foot-logo">Js'<b>Media</b></div>
+      <p class="foot-desc">Professional photography studio based in Ibadan, Nigeria. Specialising in portraits, weddings, and commercial imagery since 2020.</p>
+      <div class="foot-socials">
+        <a href="#" class="fsoc" title="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://youtube.com/@jsmedia023" class="fsoc" title="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="#" class="fsoc" title="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+        <a href="#" class="fsoc" title="Twitter/X">
+          <svg viewBox="0 0 24 24"><path d="M4 4l16 16M4 20L20 4"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-h">Navigation</div>
+      <ul class="foot-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-h">Services</div>
+      <ul class="foot-list">
+        <li><a href="#services">Portrait Sessions</a></li>
+        <li><a href="#services">Wedding Coverage</a></li>
+        <li><a href="#services">Commercial Shoots</a></li>
+        <li><a href="#services">Event Photography</a></li>
+        <li><a href="#services">Brand Content</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-h">Contact</div>
+      <div class="foot-contact-row">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <p>Ibadan, Oyo State<br>Nigeria</p>
+      </div>
+      <div class="foot-contact-row">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <p>hello@jsmedia.ng</p>
+      </div>
+      <div class="foot-contact-row">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <p>+234 — — — — — — —</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <p class="foot-copy">© 2025 Js'Media Photography. All rights reserved.</p>
+    <div class="foot-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script src="script.js"></script>
+
+</body>
+</html>
