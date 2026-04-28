@@ -1,4 +1,4 @@
-/* ── Navbar scroll ── */
+ /* ── Navbar scroll ── */
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60));
 
@@ -33,7 +33,8 @@
 
   /* ── Portfolio Carousel ── */
   const portTrack = document.getElementById('portTrack');
-  const portItems = portTrack.querySelectorAll('.port-item');
+  let allPortItems = Array.from(portTrack.querySelectorAll('.port-item'));
+  let visiblePortItems = [...allPortItems];
   let portIdx = 0;
 
   function getPortVisible() {
@@ -42,16 +43,18 @@
 
   function updatePortCarousel() {
     const vis = getPortVisible();
-    const max = Math.max(0, portItems.length - vis);
+    const max = Math.max(0, visiblePortItems.length - vis);
     portIdx = Math.min(portIdx, max);
     const w = portTrack.parentElement.offsetWidth;
-    const itemW = (w - (vis - 1) * 16) / vis;
-    portTrack.style.transform = `translateX(-${portIdx * (itemW + 16)}px)`;
+    const gap = 16;
+    const itemW = (w - (vis - 1) * gap) / vis;
+    visiblePortItems.forEach(item => { item.style.flex = `0 0 ${itemW}px`; });
+    portTrack.style.transform = `translateX(-${portIdx * (itemW + gap)}px)`;
   }
 
   document.getElementById('portNext').addEventListener('click', () => {
     const vis = getPortVisible();
-    if (portIdx < portItems.length - vis) { portIdx++; updatePortCarousel(); }
+    if (portIdx < visiblePortItems.length - vis) { portIdx++; updatePortCarousel(); }
   });
 
   document.getElementById('portPrev').addEventListener('click', () => {
@@ -59,6 +62,7 @@
   });
 
   window.addEventListener('resize', updatePortCarousel);
+  setTimeout(updatePortCarousel, 50);
 
   /* ── Portfolio Filters ── */
   document.querySelectorAll('.pf-btn').forEach(btn => {
@@ -66,9 +70,10 @@
       document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const f = btn.dataset.filter;
-      portItems.forEach(item => {
+      allPortItems.forEach(item => {
         item.style.display = (f === 'all' || item.dataset.cat === f) ? 'block' : 'none';
       });
+      visiblePortItems = allPortItems.filter(item => item.style.display !== 'none');
       portIdx = 0;
       updatePortCarousel();
     });
